@@ -13,8 +13,7 @@ normalmente, só não envia nada.
 
 ## Parte 1: GitHub
 
-Nos passos abaixo, troque `NOME-DA-ORGANIZACAO` pelo nome da organização do grupo
-no GitHub (ex.: `gpgim`).
+Organização no GitHub: **gpgim**. Repositório: **cire** (https://github.com/gpgim/cire).
 
 1. Com uma conta pessoal do GitHub (com verificação em duas etapas ativa), clique em
    **+ > New organization**, escolha o plano **Free** e dê o nome da organização.
@@ -42,7 +41,7 @@ no GitHub (ex.: `gpgim`).
    | A     | (em branco) | 185.199.109.153  |
    | A     | (em branco) | 185.199.110.153  |
    | A     | (em branco) | 185.199.111.153  |
-   | CNAME | www  | NOME-DA-ORGANIZACAO.github.io |
+   | CNAME | www  | gpgim.github.io |
 
    Deixe o nome em branco nos registros A: isso significa o próprio `cire.app.br`.
    O endereço com www vai redirecionar sozinho para `cire.app.br`.

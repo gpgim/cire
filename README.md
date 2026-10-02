@@ -3,7 +3,7 @@
 Ferramenta gratuita para empreendedores estimarem os custos de conformidade e os custos
 financeiros diretos de uma nova norma, lei ou projeto de lei.
 
-**Acesse:** https://cire.app.br
+**Acesse:** https://cire.app.br · **Código:** https://github.com/gpgim/cire
 
 Desenvolvida pelo **GP-GIM: Grupo de Pesquisa em Gestão, Inovação e Mercados**.
 
