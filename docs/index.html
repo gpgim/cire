@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIRE: calculadora gratuita para empreendedores estimarem o custo de uma nova norma regulatória.">
+    <link rel="canonical" href="https://cire.app.br/">
+    <meta property="og:title" content="CIRE | Calculadora de Impacto Regulatório para Empreendedores">
+    <meta property="og:url" content="https://cire.app.br/">
+    <meta property="og:image" content="https://cire.app.br/static/images/logo.jpg">
+    <link rel="icon" href="static/images/logo.jpg">
+    <title>Calculadora | Calculadora de Impacto Regulatório</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/vendor/bootstrap/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="static/vendor/fontawesome/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        /* Fundo Multi-Stop Linear Gradient */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #007bff 10%, #0056b3 30%, #6a92cc 60%, #003f7d 90%);
+            background-size: 200% 200%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+        /* Animação do Gradiente */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .navbar .nav-link {
+            color: #007bff;
+        }
+
+        .navbar .nav-link:hover {
+            color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .content-box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg rounded bg-light shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Calculadora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipe.html">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manual.html">Manual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="termos.html">Termos e Condições</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <style>
+        .navbar {
+            border-radius: 15px; /* Deixar o cabeçalho com bordas arredondadas */
+            margin-bottom: 20px; /* Espaço inferior */
+        }
+    </style>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-box content-box-larga">
+            
+<noscript>
+    <div class="alert alert-warning">A calculadora precisa de JavaScript ativado no navegador.</div>
+</noscript>
+
+<!-- Tela 1: dados do projeto -->
+<section id="tela-inicio" class="tela" aria-labelledby="titulo-inicio">
+    <div class="cartao-inicio mx-auto">
+        <div class="text-center mb-3">
+            <img src="static/images/logo.jpg" alt="Logo da CIRE" class="rounded-circle logo-inicio">
+        </div>
+        <h1 id="titulo-inicio" class="titulo-calc text-center mb-4">
+            <i class="fas fa-calculator" aria-hidden="true"></i> Calculadora de Custos Regulatórios
+        </h1>
+        <form id="form-inicio" novalidate>
+            <div class="mb-3">
+                <label class="form-label fw-bold" for="setor">Área de atuação da empresa</label>
+                <select id="setor" class="form-select" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                </select>
+                <div class="invalid-feedback">Escolha a área de atuação.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold" for="norma">Nome da regulação ou norma</label>
+                <input type="text" id="norma" class="form-control" placeholder="Ex: Norma Regulamentadora 12" maxlength="200" required>
+                <div class="invalid-feedback">Informe a norma, lei ou projeto de lei.</div>
+            </div>
+            <!-- Campo-armadilha contra robôs: pessoas não veem nem preenchem -->
+            <div class="campo-oculto" aria-hidden="true">
+                <label for="site_empresa">Não preencha</label>
+                <input type="text" id="site_empresa" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="aceite" required>
+                <label class="form-check-label" for="aceite">
+                    Eu concordo com os <a href="termos.html" target="_blank" rel="noopener">termos e condições</a> de uso da calculadora.
+                </label>
+                <div class="invalid-feedback">É preciso aceitar os termos para continuar.</div>
+            </div>
+            <div class="form-check mb-4 caixa-pesquisa">
+                <input class="form-check-input" type="checkbox" id="pesquisa">
+                <label class="form-check-label" for="pesquisa">
+                    <strong>Opcional:</strong> autorizo o envio dos valores deste cálculo ao GP-GIM, de forma anônima, para uso em pesquisa científica.
+                    <span class="d-block text-muted small mt-1">Não pedimos nome, e-mail nem dados da empresa. São enviados apenas a área de atuação, a norma e os custos informados. A calculadora funciona da mesma forma se você não marcar.</span>
+                </label>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg btn-pilula" id="btn-iniciar">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i> Iniciar Cálculo
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Tela 2: calculadora em dois painéis -->
+<section id="tela-calc" class="tela" hidden aria-labelledby="titulo-calc">
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <div class="painel">
+                <h1 id="titulo-calc" class="titulo-calc text-center mb-3">Calculadora de Custos</h1>
+                <p class="mb-1 small"><strong>Área de atuação:</strong> <span class="txt-setor"></span></p>
+                <p class="mb-1 small"><strong>Regulação/Norma:</strong> <span class="txt-norma"></span></p>
+                <p class="mb-3 small"><strong>Participação na pesquisa:</strong> <span class="txt-pesquisa"></span>
+                    · <button type="button" class="btn btn-link btn-sm p-0 align-baseline" id="btn-alterar">Alterar dados do projeto</button></p>
+
+                <form id="form-custo" novalidate>
+                    <fieldset class="quadro mb-3">
+                        <legend class="quadro-titulo">Informações de Custo</legend>
+                        <div class="mb-3">
+                            <label class="form-label" for="categoria">Categoria de Custo</label>
+                            <select id="categoria" class="form-select" required>
+                                <option value="" disabled selected>Selecione a categoria</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="subcategoria">Subcategoria de Custo</label>
+                            <select id="subcategoria" class="form-select" required disabled>
+                                <option value="" disabled selected>Selecione a subcategoria</option>
+                            </select>
+                        </div>
+                        <div class="mb-1">
+                            <label class="form-label" for="definicao">Definição</label>
+                            <textarea id="definicao" class="form-control" rows="3" maxlength="1000" placeholder="Escolha uma subcategoria para ver a definição"></textarea>
+                            <div class="form-text">Você pode adaptar o texto ao seu caso. Não inclua nomes de pessoas ou dados pessoais.</div>
+                        </div>
+                        <p id="exemplo" class="exemplo small mb-0" hidden></p>
+                    </fieldset>
+
+                    <fieldset class="quadro mb-3">
+                        <legend class="quadro-titulo">Valores e Quantidades</legend>
+                        <div id="campos" class="row g-3"></div>
+                        <p id="sem-campos" class="text-muted small mb-0">Escolha a categoria e a subcategoria para ver os campos.</p>
+                        <div class="mt-3">
+                            <span class="form-label d-block"><i class="fas fa-star" aria-hidden="true"></i> Resultado Final (R$)</span>
+                            <output id="resultado" class="resultado-final" aria-live="polite">R$ 0,00</output>
+                        </div>
+                    </fieldset>
+
+                    <div id="mensagem" class="alert py-2 small" role="status" hidden></div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <button type="button" class="btn btn-danger btn-pilula" id="btn-limpar"><i class="fas fa-trash" aria-hidden="true"></i> Limpar Dados</button>
+                        <button type="submit" class="btn btn-success btn-pilula" id="btn-adicionar"><i class="fas fa-plus" aria-hidden="true"></i> Adicionar Novo</button>
+                        <button type="button" class="btn btn-primary btn-pilula" id="btn-relatorio"><i class="fas fa-file-pdf" aria-hidden="true"></i> Gerar Relatório</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <aside class="painel painel-resumo" aria-labelledby="titulo-resumo">
+                <h2 id="titulo-resumo" class="titulo-resumo"><i class="fas fa-file-lines" aria-hidden="true"></i> Resumo de Custos</h2>
+                <div id="resumo-vazio" class="alert alert-info small py-2">
+                    <i class="fas fa-circle-info" aria-hidden="true"></i> Adicione itens à calculadora para ver o resumo aqui.
+                </div>
+                <div id="resumo" hidden>
+                    <div class="resumo-projeto small mb-3">
+                        <p class="resumo-rotulo mb-1">Informações do Projeto</p>
+                        <p class="mb-0"><strong>Área de atuação:</strong> <span class="txt-setor"></span></p>
+                        <p class="mb-0"><strong>Regulação/Norma:</strong> <span class="txt-norma"></span></p>
+                        <p class="mb-0"><strong>Código do cálculo:</strong> <span class="txt-codigo"></span></p>
+                    </div>
+                    <div id="resumo-grupos"></div>
+                    <p class="total-geral mb-0">TOTAL GERAL: <span id="total-geral"></span></p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<div class="d-flex flex-wrap justify-content-center align-items-end gap-5 mt-4 criado-por">
+    <div class="text-center">
+        <p class="small text-muted mb-1">Criado por</p>
+        <a href="https://www.gpgim.org" target="_blank" rel="noopener"><img src="static/images/logo_gp_gim.png" alt="GP-GIM: Grupo de Pesquisa em Gestão, Inovação e Mercados" class="rounded-circle" style="height: 64px;"></a>
+    </div>
+    <div class="text-center">
+        <p class="small text-muted mb-1">Titular</p>
+        <a href="https://www.ifg.edu.br" target="_blank" rel="noopener"><img src="static/images/logo_ifg.jpg" alt="Instituto Federal de Goiás (IFG)" style="height: 56px;"></a>
+    </div>
+</div>
+
+<canvas id="grafico-pdf" width="900" height="560" hidden></canvas>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="rounded shadow">
+        <p class="text-center my-2 text-white">
+            &copy; 2024–2026 Calculadora de Impacto Regulatório para Empreendedores |
+            Desenvolvido por <a href="https://www.gpgim.org" target="_blank" rel="noopener" class="text-decoration-none text-light">GP-GIM</a>
+        </p>
+        <p class="text-center mb-2 small text-white-50 registro-rodape">
+            Programa de computador registrado no INPI · Processo nº BR512025006716-0 · Titular: Instituto Federal de Goiás (IFG)
+        </p>
+    </footer>
+    
+    <style>
+        footer {
+            border-radius: 15px; /* Bordas arredondadas */
+            margin-top: 20px; /* Espaçamento superior */
+            padding: 10px 20px; /* Espaçamento interno */
+            background-color: #007bff; /* Cor original azul */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+    
+        footer a {
+            color: #d1eaff; /* Link em azul claro */
+            text-decoration: underline;
+        }
+    
+        footer a:hover {
+            color: #ffffff; /* Link em branco ao passar o mouse */
+        }
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script src="static/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+<script src="static/vendor/chart.umd.js"></script>
+<script src="static/vendor/jspdf.umd.min.js"></script>
+<script src="static/vendor/jspdf.plugin.autotable.min.js"></script>
+<script src="static/js/config.js"></script>
+<script src="static/js/dados.js"></script>
+<script src="static/js/calculadora.js"></script>
+
+</body>
+</html>

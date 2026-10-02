@@ -1,0 +1,16 @@
+CIRE - Calculadora de Impacto Regulatório para Empreendedores
+
+Copyright (c) 2024-2026 Instituto Federal de Educação, Ciência e Tecnologia de Goiás (IFG).
+Todos os direitos reservados.
+
+Programa de computador registrado no Instituto Nacional da Propriedade Industrial (INPI)
+sob o processo nº BR512025006716-0, nos termos da Lei nº 9.609/1998.
+Autores: Adriano de Carvalho Paranaiba e Caio Felipe Brito Paranaiba.
+
+O código está disponível publicamente para consulta e para o funcionamento do site
+https://cire.app.br. A disponibilidade pública não concede licença de uso, cópia,
+modificação ou distribuição. Pedidos de autorização devem ser dirigidos ao titular.
+
+As bibliotecas de terceiros em docs/static/vendor mantêm suas próprias licenças
+(Bootstrap: MIT; Font Awesome Free: ícones CC BY 4.0, fontes SIL OFL 1.1, código MIT;
+Chart.js: MIT; jsPDF: MIT; jsPDF-AutoTable: MIT).

@@ -1,0 +1,156 @@
+/* Efeito hover nas fotos dos membros */
+.member-photo {
+    transition: transform 0.3s;
+}
+.member-photo:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos adicionais para remover sublinhado */
+.social-icon {
+    text-decoration: none;
+}
+
+/* Estilos para os ícones Font Awesome */
+.social-icon i {
+    transition: color 0.3s;
+    color: #000; /* Cor padrão dos ícones */
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+/* Efeito hover nos ícones Font Awesome */
+.social-icon i:hover {
+    color: #007bff; /* Cor azul padrão do Bootstrap */
+}
+
+/* Estilos para o ícone de imagem do Lattes */
+.social-icon img {
+    transition: filter 0.3s;
+    width: 1.8em;
+    height: 1.8em;
+    vertical-align: middle;
+    object-fit: contain;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+/* Efeito hover no ícone Lattes */
+.social-icon img:hover {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(99%) saturate(3235%) hue-rotate(193deg) brightness(97%) contrast(101%);
+}
+
+.team-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff; /* Azul da paleta de cores do Bootstrap */
+    text-align: center;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.team-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    display: block;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.team-title {
+    background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .card-text {
+        max-width: 600px;
+    }
+}
+
+.foto-home{
+    border-radius: 50%;
+}
+
+/* ---------- Calculadora estática ---------- */
+.titulo-etapa { font-size: 2rem; font-weight: bold; color: #007bff; }
+.btn-primary { background-color: #007bff; border: none; border-radius: 8px; }
+.btn-primary:hover { background-color: #0056b3; }
+.form-control, .form-select { border-radius: 8px; }
+:focus-visible { outline: 3px solid #0056b3; outline-offset: 2px; }
+
+.tabela-tipos th, .tabela-valores th { background-color: #007bff; color: #fff; text-align: center; vertical-align: middle; }
+.tabela-tipos td, .tabela-valores td { text-align: center; vertical-align: middle; padding: 16px; }
+.tabela-tipos .definicao { text-align: left; }
+.checkbox-group { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.checkbox-group input[type="checkbox"] { transform: scale(1.5); accent-color: #007bff; }
+.quantidade { visibility: hidden; opacity: 0; transition: opacity .2s ease; text-align: center; max-width: 80px; }
+.quantidade.visivel { visibility: visible; opacity: 1; }
+.tabela-valores textarea { min-width: 200px; resize: vertical; }
+.tabela-valores .form-control[type="number"] { text-align: center; min-width: 120px; }
+
+.tabela-resultado thead th { background-color: #f2f2f2; }
+#chartLegend { display: flex; flex-wrap: wrap; justify-content: center; }
+.legend-item { display: flex; align-items: center; margin: 4px 8px; }
+.legend-color { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; }
+.legend-text { font-size: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; }
+  .quantidade, .member-photo { transition: none; }
+}
+
+@media print {
+  body { background: #fff !important; animation: none !important; }
+  nav, footer, .acoes, noscript { display: none !important; }
+  .container { margin-top: 0 !important; }
+  .content-box { box-shadow: none !important; margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
+  .tabela-resultado td, .tabela-resultado th { border: 1px solid #000 !important; }
+  .logos { page-break-inside: avoid; }
+}
+
+/* ---------- CIRE 2.0: calculadora em dois painéis ---------- */
+.content-box.content-box-larga { max-width: 1200px; background: #f4f7fb; }
+.cartao-inicio { max-width: 560px; background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 2px 10px rgba(0, 0, 0, .08); }
+.logo-inicio { height: 96px; }
+.titulo-calc { font-size: 1.6rem; font-weight: 700; color: #007bff; }
+.caixa-pesquisa { background: #eef5ff; border: 1px solid #cfe2ff; border-radius: 8px; padding: 12px 12px 12px 2.25rem; }
+.campo-oculto { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.btn-pilula { border-radius: 50px; padding: .5rem 1.2rem; font-weight: 600; }
+
+.painel { background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, .08); }
+.painel-resumo { position: sticky; top: 16px; }
+.quadro { background: #f6f8fa; border-radius: 8px; padding: 14px 16px 16px; }
+.quadro-titulo { float: left; width: 100%; font-size: 1rem; color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 4px; margin-bottom: 12px; }
+.quadro > :not(legend) { clear: both; }
+.exemplo { background: #fff; border-left: 3px solid #007bff; padding: 6px 10px; color: #444; }
+.resultado-final { display: block; background: #ffc107; border-radius: 6px; padding: 8px 12px; font-weight: 700; font-size: 1.15rem; }
+
+.titulo-resumo { font-size: 1.35rem; font-weight: 600; margin-bottom: 14px; }
+.resumo-projeto { background: #f6f8fa; border-radius: 8px; padding: 10px 12px; }
+.resumo-rotulo { color: #007bff; font-weight: 700; font-size: .9rem; }
+.resumo-item { background: #f6f8fa; border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; font-size: .9rem; }
+.resumo-item .memoria { font-size: .78rem; }
+.subtotal { border-top: 2px solid #007bff; padding-top: 6px; font-weight: 700; font-size: .92rem; }
+.total-geral { border-top: 2px solid #007bff; padding-top: 8px; color: #007bff; font-weight: 800; font-size: 1.1rem; }
+.criado-por img { opacity: .9; }
+
+@media (max-width: 991.98px) { .painel-resumo { position: static; } }
+@media (max-width: 575.98px) {
+  .content-box { padding: 12px !important; margin: 12px auto !important; }
+  .painel, .cartao-inicio { padding: 14px; }
+  .quadro { padding: 10px 12px 12px; }
+  .container { margin-top: 16px !important; }
+}
+.registro-inpi { max-width: 820px; background: #f6f8fa; border-left: 4px solid #007bff; border-radius: 8px; padding: 20px 24px; }
+.registro-rodape { font-size: .8rem; }
